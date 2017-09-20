@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VLE</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src = "js/chart.js"></script>
+
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="pie-chart">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawPieChart);
+      
+function drawPieChart() {
+
+        var jsonData = $.ajax({
+		  url: "data.php",
+		  dataType:"json",
+		  async: false
+		  }).responseText;
+	   
+		// Create our data table out of JSON data loaded from server.
+		var data = new google.visualization.DataTable(jsonData);
+
+        // Set options for pie chart.
+        var options = {title:'Activities throughout Year' ,
+						'width':1100,
+                     'height':1100};
+
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+        chart.draw(data, options);
+      }
+$(window).resize(function(){
+  drawPieChart();
+});
+  </script>
+
+    
