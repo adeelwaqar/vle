@@ -23,7 +23,8 @@ if (isset($_POST['func'])) {
 		$password="";
 		$db_name="kg_db";
         $con=mysqli_connect("$host", "$username", "$password","$db_name");
-		$sql = "SELECT kin_evidences.activitytype , COUNT(kin_evidences.activitytype) FROM `kin_evidences` WHERE `activitychildren` like '%".$data."%' OR `activitychildren` = 'All' Group BY activitytype";
+		//$sql = "SELECT kin_evidences.activitytype , COUNT(kin_evidences.activitytype) FROM `kin_evidences` WHERE `activitychildren` like '%".$data."%' OR `activitychildren` = 'All' Group BY activitytype";
+		$sql = "SELECT kin_evidences.activitytype , COUNT(kin_evidences.activitytype) FROM `kin_evidences` WHERE `activitychildren` like '%".$data."%' Group BY activitytype";
 		$result = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));
 
 

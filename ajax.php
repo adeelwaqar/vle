@@ -59,18 +59,18 @@
 <script type="text/javascript">
 function graph()
 {
-	var name = document.getElementById("txt").value;
 	google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawAttendenceChart);
 	google.charts.setOnLoadCallback(drawPieChart);
-	alert(name);
+	//alert(name);
 }
 	function drawAttendenceChart() {
+		var name = document.getElementById("txt").value;
       var jsonData = $.ajax({
 		  url: 'ajax2.php',
 		  dataType:"json",
 		  type: 'post',
-		  data: { "func": "bar","dat":'Shantel'},
+		  data: { "func": "bar","dat":name},
 		  async: false
 		  }).responseText;
 		  
@@ -114,14 +114,14 @@ function graph()
       //chart.draw(data, options);
   }
 	function drawPieChart() {
+		var name = document.getElementById("txt").value;
         var jsonData = $.ajax({
 		  url: 'ajax2.php',
 		  dataType:"json",
 		  type: 'post',
-		  data: { "func": "pie","dat":'Tara'},
+		  data: { "func": "pie","dat":name},
 		  async: false
 		  }).responseText;
-	   
 		// Create our data table out of JSON data loaded from server.
 		var data = new google.visualization.DataTable(jsonData);
 
