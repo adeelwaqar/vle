@@ -414,8 +414,8 @@ function graph()
 
         // Set options for pie chart.
         var options = {title:'Activities Term 1',
-						'width':1100,
-                     'height':1100};
+						'width':800,
+                     'height':800};
 
         // Instantiate and draw the chart for Sarah's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('term1-pie-chart'));
@@ -435,8 +435,8 @@ function graph()
 
         // Set options for pie chart.
         var options = {title:'Activities Term 2',
-						'width':1100,
-                     'height':1100};
+						'width':800,
+                     'height':800};
 
         // Instantiate and draw the chart for Sarah's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('term2-pie-chart'));
@@ -456,8 +456,8 @@ function graph()
 
         // Set options for pie chart.
         var options = {title:'Activities Term 3',
-						'width':1100,
-                     'height':1100};
+						'width':800,
+                     'height':800};
 
         // Instantiate and draw the chart for Sarah's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('term3-pie-chart'));
@@ -477,8 +477,8 @@ function graph()
 
         // Set options for pie chart.
         var options = {title:'Activities Term 4',
-						'width':1100,
-                     'height':1100};
+						'width':800,
+                     'height':800};
 
         // Instantiate and draw the chart for Sarah's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('term4-pie-chart'));
